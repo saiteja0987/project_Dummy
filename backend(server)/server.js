@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PUBLIC_PORT || 3000;
+const port = 3000;
+require('dotenv').config()
 
-app.get('/', (req, res) => {
-  res.json({ message: 'pong' }); 
+// Get request
+app.get('/ping',(req,res)=>{
+  res.json({message:'pong'});
 });
 
 if (require.main === module) {
